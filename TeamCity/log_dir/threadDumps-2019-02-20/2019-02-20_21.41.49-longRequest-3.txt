@@ -1,0 +1,1759 @@
+Request processing time (40000 ms) exceeded for the following 2 threads:
+TC: 21:38:46 JSP '/problems/buildProblemWithDetails.jsp'; 21:38:46 GET '/problems/buildProblemWithDetails.jsp?jsp_precompile=true', from client 172.20.0.2:49777, user-agent "TeamCity Server 2018.2.2 (build 61245)", no auth; http-nio-8111-exec-2
+TC: 21:38:44 JSP '/buildLog/buildResultsDiv.jsp'; 21:38:44 GET '/buildLog/buildResultsDiv.jsp?jsp_precompile=true', from client 172.20.0.2:43511, user-agent "TeamCity Server 2018.2.2 (build 61245)", no auth; http-nio-8111-exec-7
+
+
+TeamCity Professional 2018.2.2 (build 61245), startup time: 2019-02-20 21:20
+OS: Linux, version 4.9.125-linuxkit, amd64, Current user: root, Time zone: GMT (UTC)
+Java: 1.8.0_192, OpenJDK 64-Bit Server VM (25.192-b12, mixed mode), OpenJDK Runtime Environment (1.8.0_192-b12), Oracle Corporation; JVM parameters: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Djava.util.logging.config.file=/opt/teamcity/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Xmx512m -Dteamcity.configuration.path=../conf/teamcity-startup.properties -Dlog4j.configuration=file:/opt/teamcity/bin/../conf/teamcity-server-log4j.xml -Dteamcity_logs=/opt/teamcity/bin/../logs -Djava.awt.headless=true -Dignore.endorsed.dirs= -Dcatalina.base=/opt/teamcity -Dcatalina.home=/opt/teamcity -Djava.io.tmpdir=/opt/teamcity/temp
+Database type: HSQL2
+
+
+2019-02-20 21:41:49
+Full thread dump OpenJDK 64-Bit Server VM (25.192-b12 mixed mode):
+
+"Usage statistics collector 1" daemon group="main" prio=5 tid=72 nid=72 waiting 
+   java.lang.Thread.State: WAITING
+    at java.lang.Object.wait(Native Method)
+    at java.lang.Object.wait(Object.java:502)
+    at jetbrains.buildServer.usageStatistics.impl.UsageStatisticsCollectorImpl.waitForEvent(UsageStatisticsCollectorImpl.java:212)
+    at jetbrains.buildServer.usageStatistics.impl.UsageStatisticsCollectorImpl.run(UsageStatisticsCollectorImpl.java:136)
+    at java.lang.Thread.run(Thread.java:748)
+
+"TC: 21:38:39 Pre-compiling JSP "http://localhost:8112/buildLog/buildResultsDiv.jsp?jsp_precompile=true" (68/390); 21:27:50 Task: "java.util.concurrent.FutureTask@2791033a"; JSP pre-compilation thread 1" daemon group="main" prio=5 tid=62 nid=62 runnable 
+   java.lang.Thread.State: RUNNABLE
+    at java.net.SocketInputStream.socketRead0(Native Method)
+    at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+    at java.net.SocketInputStream.read(SocketInputStream.java:171)
+    at java.net.SocketInputStream.read(SocketInputStream.java:141)
+    at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+    at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+    at org.apache.commons.httpclient.HttpParser.readRawLine(HttpParser.java:78)
+    at org.apache.commons.httpclient.HttpParser.readLine(HttpParser.java:106)
+    at org.apache.commons.httpclient.HttpConnection.readLine(HttpConnection.java:1116)
+    at org.apache.commons.httpclient.HttpMethodBase.readStatusLine(HttpMethodBase.java:1973)
+    at org.apache.commons.httpclient.HttpMethodBase.readResponse(HttpMethodBase.java:1735)
+    at org.apache.commons.httpclient.HttpMethodBase.execute(HttpMethodBase.java:1098)
+    at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:398)
+    at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+    at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+    at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:323)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter$7.apply(JspPrecompilerFilter.java:2)
+    at jetbrains.buildServer.serverSide.impl.BaseAccessChecker.runWithDisabledCheck(BaseAccessChecker.java:45)
+    at jetbrains.buildServer.serverSide.impl.SecondaryNodeSecurityManager.runSafeNetworkOperation(SecondaryNodeSecurityManager.java:35)
+    at jetbrains.buildServer.serverSide.ReadOnlyRestrictor.doReadOnlyNetworkOperation(ReadOnlyRestrictor.java:6)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter.tryToPrecompile(JspPrecompilerFilter.java:29)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter.precompileJsp(JspPrecompilerFilter.java:147)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter.access$400(JspPrecompilerFilter.java:66)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter$1$1$1.apply(JspPrecompilerFilter.java:2)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter$1$1$1.apply(JspPrecompilerFilter.java:5)
+    at jetbrains.buildServer.util.NamedThreadFactory.executeWithNewThreadNameFuncThrow(NamedThreadFactory.java:107)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter$1$1.run(JspPrecompilerFilter.java:7)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Normal executor 13" group="main" prio=5 tid=124 nid=124 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"http-nio-8111-AsyncTimeout" daemon group="main" prio=5 tid=31 nid=31 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Thread.sleep(Native Method)
+    at org.apache.coyote.AbstractProtocol$AsyncTimeout.run(AbstractProtocol.java:1149)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Running builds update scheduler 1" group="main" prio=5 tid=103 nid=103 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"TC: 21:41:47 Processing REST request; 21:41:47 GET '/app/rest/server?fields=startTime%2CbuildNumber', from client 172.20.0.1:46868, authenticated as 'admin' (cathy) {id=1}; http-nio-8111-exec-4" daemon group="main" prio=5 tid=21 nid=21 runnable 
+   java.lang.Thread.State: RUNNABLE
+    at java.util.zip.ZipFile.open(Native Method)
+    at java.util.zip.ZipFile.<init>(ZipFile.java:225)
+    at java.util.zip.ZipFile.<init>(ZipFile.java:155)
+    at java.util.jar.JarFile.<init>(JarFile.java:166)
+    at java.util.jar.JarFile.<init>(JarFile.java:130)
+    at org.apache.tomcat.util.compat.JreCompat.jarFileNewInstance(JreCompat.java:196)
+    at org.apache.tomcat.util.compat.JreCompat.jarFileNewInstance(JreCompat.java:181)
+    at org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:308)
+    at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:96)
+    at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:257)
+    at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:281)
+    at org.apache.catalina.webresources.CachedResource.validateResource(CachedResource.java:110)
+    at org.apache.catalina.webresources.Cache.getResource(Cache.java:69)
+    at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:216)
+    at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:225)
+    at org.apache.catalina.loader.WebappClassLoaderBase.findResource(WebappClassLoaderBase.java:919)
+    at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1040)
+    at jetbrains.buildServer.plugins.classLoaders.TeamCityClassLoader.getResource(TeamCityClassLoader.java:118)
+    at javax.xml.bind.ContextFinder.loadJAXBProperties(ContextFinder.java:483)
+    at javax.xml.bind.ContextFinder.find(ContextFinder.java:387)
+    at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:652)
+    at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:599)
+    at com.sun.jersey.core.provider.jaxb.AbstractJAXBProvider.getStoredJAXBContext(AbstractJAXBProvider.java:196)
+    at com.sun.jersey.core.provider.jaxb.AbstractJAXBProvider.getJAXBContext(AbstractJAXBProvider.java:188)
+    at com.sun.jersey.core.provider.jaxb.AbstractJAXBProvider.getMarshaller(AbstractJAXBProvider.java:166)
+    at com.sun.jersey.core.provider.jaxb.AbstractJAXBProvider.getMarshaller(AbstractJAXBProvider.java:145)
+    at com.sun.jersey.core.provider.jaxb.AbstractRootElementProvider.writeTo(AbstractRootElementProvider.java:151)
+    at com.sun.jersey.spi.container.ContainerResponse.write(ContainerResponse.java:302)
+    at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1510)
+    at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1419)
+    at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1409)
+    at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:409)
+    at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:558)
+    at com.sun.jersey.spi.container.servlet.ServletContainer.doFilter(ServletContainer.java:927)
+    at com.sun.jersey.spi.container.servlet.ServletContainer.doFilter(ServletContainer.java:875)
+    at jetbrains.buildServer.server.rest.APIController$4.lambda$apply$1(APIController.java:487)
+    at jetbrains.buildServer.server.rest.APIController$4$$Lambda$771/949776420.apply(Unknown Source)
+    at jetbrains.buildServer.server.rest.data.RestContext.run(RestContext.java:58)
+    at jetbrains.buildServer.server.rest.APIController$4.apply(APIController.java:474)
+    at jetbrains.buildServer.server.rest.APIController$4.apply(APIController.java:471)
+    at jetbrains.buildServer.util.Util.doUnderContextClassLoader(Util.java:78)
+    at jetbrains.buildServer.server.rest.APIController.lambda$doHandle$5(APIController.java:471)
+    at jetbrains.buildServer.server.rest.APIController$$Lambda$768/806873389.apply(Unknown Source)
+    at jetbrains.buildServer.server.rest.APIController.lambda$patchThread$6(APIController.java:548)
+    at jetbrains.buildServer.server.rest.APIController$$Lambda$769/340609899.apply(Unknown Source)
+    at jetbrains.buildServer.util.NamedThreadFactory.executeWithNewThreadNameFuncThrow(NamedThreadFactory.java:107)
+    at jetbrains.buildServer.server.rest.APIController.patchThread(APIController.java:548)
+    at jetbrains.buildServer.server.rest.APIController.doHandle(APIController.java:469)
+    at jetbrains.buildServer.controllers.BaseController.handleRequestInternal(BaseController.java:114)
+    at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:174)
+    at jetbrains.buildServer.controllers.BaseController.handleRequest(BaseController.java:93)
+    at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:50)
+    at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+    at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+    at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+    at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+    at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+    at jetbrains.buildServer.maintenance.TeamCityDispatcherServlet.processedByMainServlet(TeamCityDispatcherServlet.java:11)
+    at jetbrains.buildServer.maintenance.TeamCityDispatcherServlet.service(TeamCityDispatcherServlet.java:37)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter.doFilter(JspPrecompilerFilter.java:19)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.DisableSessionIdFromUrlFilter.doFilter(DisableSessionIdFromUrlFilter.java:1)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.UserIdProviderFilter.doFilter(UserIdProviderFilter.java:2)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.NodeInfoHeaderFilter.doFilter(NodeInfoHeaderFilter.java:6)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:107)
+    at jetbrains.buildServer.diagnostic.web.DiagnosticFilter.doFilter(DiagnosticFilter.java:88)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at jetbrains.buildServer.web.DependencyParametersCalculationContextFilter.doFilter(DependencyParametersCalculationContextFilter.java:12)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at jetbrains.buildServer.web.ContentSecurityPolicyFilter.doFilter(ContentSecurityPolicyFilter.java:21)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at jetbrains.buildServer.web.CSRFFilter.doFilter(CSRFFilter.java:112)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:73)
+    at jetbrains.buildServer.web.DelegatingFilter.doFilter(DelegatingFilter.java:61)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.ResponseFragmentFilter.doFilter(ResponseFragmentFilter.java:12)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+    at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+    at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+    at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+    at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+    at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+    at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+    at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+    at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+    at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+    at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+    at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Build Triggers Monitor 1" daemon group="main" prio=5 tid=116 nid=116 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.serverSide.impl.BuildServerRunner$BuildServerWorker.run(BuildServerRunner.java:5)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Flush Web UI Updates 1" daemon group="main" prio=5 tid=57 nid=57 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Thread.sleep(Native Method)
+    at jetbrains.buildServer.push.impl.DefaultTopicsRegistry$ValueTopicsFlushProcessor.lambda$start$0(DefaultTopicsRegistry.java:8)
+    at jetbrains.buildServer.push.impl.DefaultTopicsRegistry$ValueTopicsFlushProcessor$$Lambda$128/73567404.run(Unknown Source)
+    at java.lang.Thread.run(Thread.java:748)
+
+"CommittedBuildsUpdater 1" group="main" prio=5 tid=131 nid=131 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Test failure rate persisting thread 1" daemon group="main" prio=5 tid=52 nid=52 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Thread.sleep(Native Method)
+    at jetbrains.buildServer.serverSide.stat.TestFailureRateCollector.processPersistingQueue(TestFailureRateCollector.java:117)
+    at jetbrains.buildServer.serverSide.stat.TestFailureRateCollector.access$600(TestFailureRateCollector.java:108)
+    at jetbrains.buildServer.serverSide.stat.TestFailureRateCollector$3.lambda$run$0(TestFailureRateCollector.java:2)
+    at jetbrains.buildServer.serverSide.stat.TestFailureRateCollector$3$$Lambda$110/1620249902.run(Unknown Source)
+    at jetbrains.buildServer.serverSide.stat.TestFailureRateCollector.runIfResponsible(TestFailureRateCollector.java:113)
+    at jetbrains.buildServer.serverSide.stat.TestFailureRateCollector.access$500(TestFailureRateCollector.java:96)
+    at jetbrains.buildServer.serverSide.stat.TestFailureRateCollector$3.run(TestFailureRateCollector.java:3)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Build estimates updater 1" daemon group="main" prio=5 tid=105 nid=105 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.serverSide.impl.timeEstimation.CachingBuildEstimator$2.run(CachingBuildEstimator.java:12)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Agent Long-Polling Processor 2" daemon group="main" prio=5 tid=128 nid=128 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"process reaper" daemon group="system" prio=10 tid=156 nid=156 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+    at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+    at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+    at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"GC Daemon" daemon group="system" prio=2 tid=11 nid=11 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at sun.misc.GC$Daemon.run(GC.java:117)
+
+"Finalizer" daemon group="system" prio=8 tid=3 nid=3 waiting 
+   java.lang.Thread.State: WAITING
+    at java.lang.Object.wait(Native Method)
+    at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+    at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+    at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:216)
+
+"Store issues Spool Thread" daemon group="main" prio=5 tid=68 nid=68 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Thread.sleep(Native Method)
+    at net.sf.ehcache.store.DiskStore.spoolAndExpiryThreadMain(DiskStore.java:634)
+    at net.sf.ehcache.store.DiskStore.access$900(DiskStore.java:68)
+    at net.sf.ehcache.store.DiskStore$SpoolAndExpiryThread.run(DiskStore.java:1110)
+
+"Agent messages processing thread 1" group="main" prio=5 tid=53 nid=53 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.serverSide.impl.BuildAgentMessagesQueue$2.run(BuildAgentMessagesQueue.java:5)
+    at java.lang.Thread.run(Thread.java:748)
+
+"HSQLDB Timer @41633896" daemon group="main" prio=5 tid=34 nid=34 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at org.hsqldb.lib.HsqlTimer$TaskQueue.park(HsqlTimer.java:882)
+    at org.hsqldb.lib.HsqlTimer.nextTask(HsqlTimer.java:528)
+    at org.hsqldb.lib.HsqlTimer$TaskRunner.run(HsqlTimer.java:610)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Agent Long-Polling Processor 3" daemon group="main" prio=5 tid=129 nid=129 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Agent Long-Polling Timeout 1" daemon group="main" prio=5 tid=58 nid=58 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Thread.sleep(Native Method)
+    at jetbrains.buildServer.controllers.agentServer.LongPollingCommandsRequestsProcessor.lambda$new$1(LongPollingCommandsRequestsProcessor.java:26)
+    at jetbrains.buildServer.controllers.agentServer.LongPollingCommandsRequestsProcessor$$Lambda$129/2126310309.run(Unknown Source)
+    at java.lang.Thread.run(Thread.java:748)
+
+"RMI RenewClean-[localhost:38209]" daemon group="system" prio=5 tid=84 nid=84 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+    at sun.rmi.transport.DGCClient$EndpointEntry$RenewCleanThread.run(DGCClient.java:563)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Background Build Indexer (search) 1" daemon group="main" prio=1 tid=73 nid=73 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.serverSide.build.index.BuildIndexer.runInBackground(BuildIndexer.java:159)
+    at jetbrains.buildServer.serverSide.build.index.BuildIndexer.access$000(BuildIndexer.java:64)
+    at jetbrains.buildServer.serverSide.build.index.BuildIndexer$2.run(BuildIndexer.java:3)
+    at java.lang.Thread.run(Thread.java:748)
+
+"WebSocket Broadcaster 10" daemon group="main" prio=5 tid=149 nid=149 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Scheduled executor 3" group="main" prio=5 tid=43 nid=43 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"ContainerBackgroundProcessor[StandardEngine[Catalina]]" daemon group="main" prio=5 tid=17 nid=17 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Thread.sleep(Native Method)
+    at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1359)
+    at java.lang.Thread.run(Thread.java:748)
+
+"NuGet Packages Version Checker 3" daemon group="main" prio=5 tid=148 nid=148 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"NuGet Packages Version Checker 1" daemon group="main" prio=5 tid=113 nid=113 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"WebSocket Broadcaster 6" daemon group="main" prio=5 tid=143 nid=143 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"http-nio-8111-exec-1" daemon group="main" prio=5 tid=18 nid=18 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:103)
+    at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+    at java.lang.Thread.run(Thread.java:748)
+
+"main" group="main" prio=5 tid=1 nid=1 runnable 
+   java.lang.Thread.State: RUNNABLE
+    at java.net.PlainSocketImpl.socketAccept(Native Method)
+    at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:409)
+    at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+    at java.net.ServerSocket.accept(ServerSocket.java:513)
+    at org.apache.catalina.core.StandardServer.await(StandardServer.java:466)
+    at org.apache.catalina.startup.Catalina.await(Catalina.java:775)
+    at org.apache.catalina.startup.Catalina.start(Catalina.java:721)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:498)
+    at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+    at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+"Agent Long-Polling Processor 1" daemon group="main" prio=5 tid=126 nid=126 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Normal executor 5" group="main" prio=5 tid=111 nid=111 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"WebSocket Broadcaster 9" daemon group="main" prio=5 tid=147 nid=147 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Alarm (Queue pause/resume watcher)" daemon group="main" prio=5 tid=71 nid=71 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Normal executor 1" group="main" prio=5 tid=100 nid=100 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Ping 1" daemon group="main" prio=5 tid=114 nid=114 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.serverSide.impl.BuildServerRunner$BuildServerWorker.run(BuildServerRunner.java:5)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Scheduled executor 1" group="main" prio=5 tid=38 nid=38 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"WebSocket Broadcaster 5" daemon group="main" prio=5 tid=142 nid=142 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"OSProcessHandler pooled thread" daemon group="main" prio=10 tid=77 nid=77 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Thread.sleep(Native Method)
+    at com.intellij.execution.process.OSProcessHandler$ReadProcessThread.readNextByte(OSProcessHandler.java:305)
+    at com.intellij.execution.process.OSProcessHandler$ReadProcessThread.run(OSProcessHandler.java:275)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Change Observer 1" daemon group="main" prio=5 tid=15 nid=15 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Agent messages processing thread 2" group="main" prio=5 tid=54 nid=54 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.serverSide.impl.BuildAgentMessagesQueue$2.run(BuildAgentMessagesQueue.java:5)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Scheduled executor 4" group="main" prio=5 tid=48 nid=48 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Memory Usage Watcher 1" daemon group="main" prio=5 tid=60 nid=60 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.diagnostic.MemoryUsageMonitor$Watcher.run(MemoryUsageMonitor.java:39)
+    at java.lang.Thread.run(Thread.java:748)
+
+"WebSocket Broadcaster 2" daemon group="main" prio=5 tid=139 nid=139 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Store pullRequests Spool Thread" daemon group="main" prio=5 tid=85 nid=85 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Thread.sleep(Native Method)
+    at net.sf.ehcache.store.DiskStore.spoolAndExpiryThreadMain(DiskStore.java:634)
+    at net.sf.ehcache.store.DiskStore.access$900(DiskStore.java:68)
+    at net.sf.ehcache.store.DiskStore$SpoolAndExpiryThread.run(DiskStore.java:1110)
+
+"Scheduled executor 2" group="main" prio=5 tid=42 nid=42 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Connection Pool Watcher 1" daemon group="main" prio=1 tid=35 nid=35 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Thread.sleep(Native Method)
+    at jetbrains.buildServer.serverSide.db.ReliablePoolingDataSource.watchLoop(ReliablePoolingDataSource.java:143)
+    at jetbrains.buildServer.serverSide.db.ReliablePoolingDataSource.access$000(ReliablePoolingDataSource.java:30)
+    at jetbrains.buildServer.serverSide.db.ReliablePoolingDataSource$1.run(ReliablePoolingDataSource.java:75)
+    at java.lang.Thread.run(Thread.java:748)
+
+"WebSocket Broadcaster 7" daemon group="main" prio=5 tid=145 nid=145 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"ImmutableAgentCleanThread 1" daemon group="main" prio=5 tid=112 nid=112 waiting 
+   java.lang.Thread.State: WAITING
+    at java.lang.Object.wait(Native Method)
+    at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+    at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+    at jetbrains.buildServer.serverSide.flakyTestDetector.opendata.ImmutableAgentCleanThread$1.lambda$serverStartup$0(ImmutableAgentCleanThread.java:26)
+    at jetbrains.buildServer.serverSide.flakyTestDetector.opendata.ImmutableAgentCleanThread$1$$Lambda$688/952571306.run(Unknown Source)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Normal executor 7" group="main" prio=5 tid=118 nid=118 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"OSProcessHandler pooled thread" daemon group="main" prio=5 tid=76 nid=76 waiting 
+   java.lang.Thread.State: WAITING
+    at java.lang.Object.wait(Native Method)
+    at java.lang.Object.wait(Object.java:502)
+    at java.lang.UNIXProcess.waitFor(UNIXProcess.java:395)
+    at com.intellij.execution.process.OSProcessHandler$ProcessWaitFor$1.run(OSProcessHandler.java:97)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"TC: 21:41:49 Save File On Disk; BackgroundPersister - Save 1" group="main" prio=5 tid=44 nid=44 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2163)
+    at jetbrains.buildServer.serverSide.impl.projects.BackgroundPersisterImpl.awaitCompleteTask(BackgroundPersisterImpl.java:32)
+    at jetbrains.buildServer.serverSide.impl.projects.BackgroundPersisterImpl.access$100(BackgroundPersisterImpl.java:148)
+    at jetbrains.buildServer.serverSide.impl.projects.BackgroundPersisterImpl$FlushOnDisk.run(BackgroundPersisterImpl.java:7)
+    at jetbrains.buildServer.util.NamedThreadFactory.executeWithNewThreadName(NamedThreadFactory.java:76)
+    at jetbrains.buildServer.util.ExceptionUtil$1.run(ExceptionUtil.java:41)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"http-nio-8111-ClientPoller-1" daemon group="main" prio=5 tid=29 nid=29 runnable 
+   java.lang.Thread.State: RUNNABLE
+    at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+    at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+    at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+    at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+    at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+    at org.apache.tomcat.util.net.NioEndpoint$Poller.run(NioEndpoint.java:825)
+    at java.lang.Thread.run(Thread.java:748)
+
+"NuGet Packages Version Checker 4" daemon group="main" prio=5 tid=152 nid=152 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Agent messages processing thread 4" group="main" prio=5 tid=56 nid=56 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.serverSide.impl.BuildAgentMessagesQueue$2.run(BuildAgentMessagesQueue.java:5)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Low prio executor 1" daemon group="main" prio=4 tid=96 nid=96 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Store contentCache Spool Thread" daemon group="main" prio=5 tid=51 nid=51 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Thread.sleep(Native Method)
+    at net.sf.ehcache.store.DiskStore.spoolAndExpiryThreadMain(DiskStore.java:634)
+    at net.sf.ehcache.store.DiskStore.access$900(DiskStore.java:68)
+    at net.sf.ehcache.store.DiskStore$SpoolAndExpiryThread.run(DiskStore.java:1110)
+
+"OSProcessHandler pooled thread" daemon group="main" prio=5 tid=79 nid=79 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:997)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1304)
+    at com.intellij.util.concurrency.Semaphore.waitFor(Semaphore.java:60)
+    at com.intellij.execution.process.OSProcessHandler$ProcessWaitFor.waitFor(OSProcessHandler.java:109)
+    at com.intellij.execution.process.OSProcessHandler$3$1.run(OSProcessHandler.java:144)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Low prio executor 4" daemon group="main" prio=4 tid=99 nid=99 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Low prio executor 2" daemon group="main" prio=4 tid=97 nid=97 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Normal executor 8" group="main" prio=5 tid=119 nid=119 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"ObsoleteBuildsKiller 1" group="main" prio=5 tid=107 nid=107 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Background Build Indexer (metadata) 1" daemon group="main" prio=1 tid=59 nid=59 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.serverSide.build.index.BuildIndexer.runInBackground(BuildIndexer.java:159)
+    at jetbrains.buildServer.serverSide.build.index.BuildIndexer.access$000(BuildIndexer.java:64)
+    at jetbrains.buildServer.serverSide.build.index.BuildIndexer$2.run(BuildIndexer.java:3)
+    at java.lang.Thread.run(Thread.java:748)
+
+"process reaper" daemon group="system" prio=10 tid=75 nid=75 runnable 
+   java.lang.Thread.State: RUNNABLE
+    at java.lang.UNIXProcess.waitForProcessExit(Native Method)
+    at java.lang.UNIXProcess.lambda$initStreams$3(UNIXProcess.java:289)
+    at java.lang.UNIXProcess$$Lambda$296/2039933372.run(Unknown Source)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"NioBlockingSelector.BlockPoller-1" daemon group="main" prio=5 tid=12 nid=12 runnable 
+   java.lang.Thread.State: RUNNABLE
+    at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+    at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+    at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+    at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+    at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+    at org.apache.tomcat.util.net.NioBlockingSelector$BlockPoller.run(NioBlockingSelector.java:298)
+
+"Flush Queue 1" daemon group="main" prio=5 tid=115 nid=115 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.serverSide.impl.BuildServerRunner$BuildServerWorker.run(BuildServerRunner.java:5)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Low prio executor 5" daemon group="main" prio=4 tid=104 nid=104 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Checking for VCS changes monitor 1" daemon group="main" prio=5 tid=47 nid=47 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.serverSide.impl.VcsModificationChecker.vcsMonitorAction(VcsModificationChecker.java:98)
+    at jetbrains.buildServer.serverSide.impl.VcsModificationChecker.lambda$new$0(VcsModificationChecker.java:194)
+    at jetbrains.buildServer.serverSide.impl.VcsModificationChecker$$Lambda$57/365277722.run(Unknown Source)
+    at java.lang.Thread.run(Thread.java:748)
+
+"net.sf.ehcache.CacheManager@2a598fbe" daemon group="main" prio=5 tid=67 nid=67 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at java.util.TimerThread.mainLoop(Timer.java:552)
+    at java.util.TimerThread.run(Timer.java:505)
+
+"Signal Dispatcher" daemon group="system" prio=9 tid=4 nid=4 runnable 
+   java.lang.Thread.State: RUNNABLE
+
+"Normal executor 9" group="main" prio=5 tid=120 nid=120 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"http-nio-8111-ClientPoller-0" daemon group="main" prio=5 tid=28 nid=28 runnable 
+   java.lang.Thread.State: RUNNABLE
+    at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+    at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+    at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+    at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+    at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+    at org.apache.tomcat.util.net.NioEndpoint$Poller.run(NioEndpoint.java:825)
+    at java.lang.Thread.run(Thread.java:748)
+
+"WebSocket Broadcaster 1" daemon group="main" prio=5 tid=138 nid=138 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Normal executor 4" group="main" prio=5 tid=110 nid=110 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"TC: 21:38:41 Pre-compiling JSP "http://localhost:8112/problems/buildProblemWithDetails.jsp?jsp_precompile=true" (67/389); 21:27:50 Task: "java.util.concurrent.FutureTask@3cc7b2d0"; JSP pre-compilation thread 2" daemon group="main" prio=5 tid=63 nid=63 runnable 
+   java.lang.Thread.State: RUNNABLE
+    at java.net.SocketInputStream.socketRead0(Native Method)
+    at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+    at java.net.SocketInputStream.read(SocketInputStream.java:171)
+    at java.net.SocketInputStream.read(SocketInputStream.java:141)
+    at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+    at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+    at org.apache.commons.httpclient.HttpParser.readRawLine(HttpParser.java:78)
+    at org.apache.commons.httpclient.HttpParser.readLine(HttpParser.java:106)
+    at org.apache.commons.httpclient.HttpConnection.readLine(HttpConnection.java:1116)
+    at org.apache.commons.httpclient.HttpMethodBase.readStatusLine(HttpMethodBase.java:1973)
+    at org.apache.commons.httpclient.HttpMethodBase.readResponse(HttpMethodBase.java:1735)
+    at org.apache.commons.httpclient.HttpMethodBase.execute(HttpMethodBase.java:1098)
+    at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:398)
+    at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+    at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+    at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:323)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter$7.apply(JspPrecompilerFilter.java:2)
+    at jetbrains.buildServer.serverSide.impl.BaseAccessChecker.runWithDisabledCheck(BaseAccessChecker.java:45)
+    at jetbrains.buildServer.serverSide.impl.SecondaryNodeSecurityManager.runSafeNetworkOperation(SecondaryNodeSecurityManager.java:35)
+    at jetbrains.buildServer.serverSide.ReadOnlyRestrictor.doReadOnlyNetworkOperation(ReadOnlyRestrictor.java:6)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter.tryToPrecompile(JspPrecompilerFilter.java:29)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter.precompileJsp(JspPrecompilerFilter.java:147)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter.access$400(JspPrecompilerFilter.java:66)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter$1$1$1.apply(JspPrecompilerFilter.java:2)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter$1$1$1.apply(JspPrecompilerFilter.java:5)
+    at jetbrains.buildServer.util.NamedThreadFactory.executeWithNewThreadNameFuncThrow(NamedThreadFactory.java:107)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter$1$1.run(JspPrecompilerFilter.java:7)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"WebSocket Broadcaster 3" daemon group="main" prio=5 tid=140 nid=140 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Normal executor 10" group="main" prio=5 tid=121 nid=121 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Agent Distribution Monitor 1" group="main" prio=5 tid=109 nid=109 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Normal executor 3" group="main" prio=5 tid=102 nid=102 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"InvestigationsAutoAssigner 1" daemon group="main" prio=5 tid=82 nid=82 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"http-nio-8111-exec-9" daemon group="main" prio=5 tid=26 nid=26 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:103)
+    at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Store issue-errors Spool Thread" daemon group="main" prio=5 tid=69 nid=69 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Thread.sleep(Native Method)
+    at net.sf.ehcache.store.DiskStore.spoolAndExpiryThreadMain(DiskStore.java:634)
+    at net.sf.ehcache.store.DiskStore.access$900(DiskStore.java:68)
+    at net.sf.ehcache.store.DiskStore$SpoolAndExpiryThread.run(DiskStore.java:1110)
+
+"Low prio executor 3" daemon group="main" prio=4 tid=98 nid=98 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"TeamCity Server (version 2018.2.2 build 61245 started 2019-02-20 21:20:32.577), node id: MAIN_SERVER" daemon group="main" prio=5 tid=16 nid=16 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.maintenance.StartupContext.waitForStageLock(StartupContext.java:440)
+    at jetbrains.buildServer.maintenance.StartupContext.waitForFollowingStage(StartupContext.java:197)
+    at jetbrains.buildServer.maintenance.StartupProcessor.processTeamCityLifecycle(StartupProcessor.java:925)
+    at jetbrains.buildServer.maintenance.StartupProcessor.access$000(StartupProcessor.java:869)
+    at jetbrains.buildServer.maintenance.StartupProcessor$1.run(StartupProcessor.java:3)
+    at java.lang.Thread.run(Thread.java:748)
+
+"http-nio-8111-exec-8" daemon group="main" prio=5 tid=25 nid=25 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:103)
+    at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+    at java.lang.Thread.run(Thread.java:748)
+
+"OSProcessHandler pooled thread" daemon group="main" prio=10 tid=78 nid=78 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Thread.sleep(Native Method)
+    at com.intellij.execution.process.OSProcessHandler$ReadProcessThread.readNextByte(OSProcessHandler.java:305)
+    at com.intellij.execution.process.OSProcessHandler$ReadProcessThread.run(OSProcessHandler.java:275)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Scheduled executor 5" group="main" prio=5 tid=49 nid=49 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Statistics publisher 1" group="main" prio=5 tid=106 nid=106 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Multi node tasks 1" group="main" prio=5 tid=46 nid=46 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.serverSide.impl.MultiNodeTasksDbImpl.lambda$new$0(MultiNodeTasksDbImpl.java:145)
+    at jetbrains.buildServer.serverSide.impl.MultiNodeTasksDbImpl$$Lambda$53/1916762157.run(Unknown Source)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Multi-node events publisher 1" group="main" prio=5 tid=37 nid=37 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.serverSide.MultiNodesEventsDbImpl.processPendingEvents(MultiNodesEventsDbImpl.java:16)
+    at jetbrains.buildServer.serverSide.MultiNodesEventsDbImpl$$Lambda$13/18204235.run(Unknown Source)
+    at java.lang.Thread.run(Thread.java:748)
+
+"RMI Scheduler(0)" daemon group="system" prio=5 tid=83 nid=83 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Normal executor 14" group="main" prio=5 tid=127 nid=127 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"http-nio-8111-exec-3" daemon group="main" prio=5 tid=20 nid=20 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:103)
+    at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+    at java.lang.Thread.run(Thread.java:748)
+
+"FilesWatcher 1" daemon group="main" prio=5 tid=36 nid=36 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.io.UnixFileSystem.getLength(Native Method)
+    at java.io.File.length(File.java:974)
+    at jetbrains.buildServer.configuration.WatchedFileState.getFileSize(WatchedFileState.java:45)
+    at jetbrains.buildServer.configuration.WatchedFileState.isChanged(WatchedFileState.java:60)
+    at jetbrains.buildServer.configuration.FilesState.computeChanges(FilesState.java:71)
+    at jetbrains.buildServer.configuration.FilesWatcher.detectChanges(FilesWatcher.java:344)
+    at jetbrains.buildServer.configuration.FilesWatcher$1.run(FilesWatcher.java:295)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+    at jetbrains.buildServer.util.executors.TeamCityScheduledThreadPoolExecutor$RunnableScheduledFutureWrapper.run(TeamCityScheduledThreadPoolExecutor.java:81)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"JSP pre-compilation thread 1" daemon group="main" prio=5 tid=61 nid=61 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.FutureTask.awaitDone(FutureTask.java:429)
+    at java.util.concurrent.FutureTask.get(FutureTask.java:191)
+    at jetbrains.buildServer.util.ThreadUtil.waitForTasks(ThreadUtil.java:88)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter$1.run(JspPrecompilerFilter.java:4)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Change Observer 1" daemon group="main" prio=5 tid=45 nid=45 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Store Subversion Externals Spool Thread" daemon group="main" prio=5 tid=70 nid=70 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Thread.sleep(Native Method)
+    at net.sf.ehcache.store.DiskStore.spoolAndExpiryThreadMain(DiskStore.java:634)
+    at net.sf.ehcache.store.DiskStore.access$900(DiskStore.java:68)
+    at net.sf.ehcache.store.DiskStore$SpoolAndExpiryThread.run(DiskStore.java:1110)
+
+"Normal executor 6" group="main" prio=5 tid=117 nid=117 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Periodic tasks thread" daemon group="main" prio=5 tid=80 nid=80 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"DBMaintenanceScheduler" daemon group="main" prio=5 tid=91 nid=91 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at java.util.TimerThread.mainLoop(Timer.java:552)
+    at java.util.TimerThread.run(Timer.java:505)
+
+"http-nio-8111-exec-10" daemon group="main" prio=5 tid=27 nid=27 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:103)
+    at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+    at java.lang.Thread.run(Thread.java:748)
+
+"NuGet Packages Version Checker 2" daemon group="main" prio=5 tid=133 nid=133 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"TC: 21:41:47 POST '/admin/createObjectFromUrl.html?parentId=_Root&url=https%3A%2F%2Fgithub.com%2FGitUC%2FAspNetCore.git&username=hailinz%40hotmail.com&createProjectFromUrl=Proceed&tc-csrf-token=08c521bc-07dc-447e-b018-64f948b73825&objectType=PROJECT&oauthProviderId=&publicKey=00afc80d7b2ea5556d86a9dc71efa32bf3f1e9e52500e6d97a6c730a9ff64315086257870912d3799bd977c58b72886911d0053606474da65fb924458ef1627c86dfcca34fe3b62a5dc76f12eb6945a862700114eddbce362615852e76e223e54e9d63d17b552de97a99403e479fe373b636d93d2ae3561...', from client 172.20.0.1:46882, authenticated as 'admin' (cathy) {id=1}; http-nio-8111-exec-6" daemon group="main" prio=5 tid=23 nid=23 blocked on java.lang.Object@76e14892
+   by "TC: 21:41:47 Processing REST request; 21:41:47 GET '/app/rest/server?fields=startTime%2CbuildNumber', from client 172.20.0.1:46868, authenticated as 'admin' (cathy) {id=1}; http-nio-8111-exec-4"
+   java.lang.Thread.State: BLOCKED
+    at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntries(AbstractSingleArchiveResourceSet.java:66)
+    at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:254)
+    at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:281)
+    at org.apache.catalina.webresources.Cache.getResource(Cache.java:62)
+    at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:216)
+    at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:225)
+    at org.apache.catalina.loader.WebappClassLoaderBase.findClassInternal(WebappClassLoaderBase.java:2263)
+    at org.apache.catalina.loader.WebappClassLoaderBase.findClass(WebappClassLoaderBase.java:846)
+    at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1313)
+    at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1172)
+    at jetbrains.vcs.api.InterceptableVcsServiceFactory.getExtensions(InterceptableVcsServiceFactory.java:8)
+    at jetbrains.vcs.api.InterceptableVcsServiceFactory.getGenericService(InterceptableVcsServiceFactory.java:15)
+    at jetbrains.buildServer.vcs.impl.VcsManagerImpl.getGenericService(VcsManagerImpl.java:81)
+    at jetbrains.buildServer.serverSide.impl.auth.SecuredVcsManager.getGenericService(SecuredVcsManager.java:24)
+    at jetbrains.buildServer.serverSide.discovery.VcsUrlValidator.convertRepositoryUrlToProperties(VcsUrlValidator.java:44)
+    at jetbrains.buildServer.serverSide.discovery.VcsUrlValidator.validateVcsUrl(VcsUrlValidator.java:63)
+    at jetbrains.buildServer.serverSide.discovery.VcsResourceDiscoveryExtension.discover(VcsResourceDiscoveryExtension.java:24)
+    at jetbrains.buildServer.controllers.admin.projects.setupFromUrl.CreateObjectFromUrlController.doPost(CreateObjectFromUrlController.java:8)
+    at jetbrains.buildServer.controllers.BaseFormXmlController$1.handleRequest(BaseFormXmlController.java:54)
+    at jetbrains.buildServer.controllers.AjaxRequestProcessor.processRequest(AjaxRequestProcessor.java:48)
+    at jetbrains.buildServer.controllers.BaseFormXmlController.doHandle(BaseFormXmlController.java:52)
+    at jetbrains.buildServer.controllers.BaseController.handleRequestInternal(BaseController.java:114)
+    at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:174)
+    at jetbrains.buildServer.controllers.BaseController.handleRequest(BaseController.java:93)
+    at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:50)
+    at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+    at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+    at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+    at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+    at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+    at jetbrains.buildServer.maintenance.TeamCityDispatcherServlet.processedByMainServlet(TeamCityDispatcherServlet.java:11)
+    at jetbrains.buildServer.maintenance.TeamCityDispatcherServlet.service(TeamCityDispatcherServlet.java:37)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter.doFilter(JspPrecompilerFilter.java:19)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.DisableSessionIdFromUrlFilter.doFilter(DisableSessionIdFromUrlFilter.java:1)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.UserIdProviderFilter.doFilter(UserIdProviderFilter.java:2)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.NodeInfoHeaderFilter.doFilter(NodeInfoHeaderFilter.java:6)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:107)
+    at jetbrains.buildServer.diagnostic.web.DiagnosticFilter.doFilter(DiagnosticFilter.java:88)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at jetbrains.buildServer.web.DependencyParametersCalculationContextFilter.doFilter(DependencyParametersCalculationContextFilter.java:12)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at jetbrains.buildServer.web.ContentSecurityPolicyFilter.doFilter(ContentSecurityPolicyFilter.java:21)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at jetbrains.buildServer.web.CSRFFilter.doFilter(CSRFFilter.java:112)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:73)
+    at jetbrains.buildServer.web.DelegatingFilter.doFilter(DelegatingFilter.java:61)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.ResponseFragmentFilter.doFilter(ResponseFragmentFilter.java:12)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+    at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+    at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+    at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+    at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+    at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+    at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+    at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+    at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+    at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+    at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+    at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+    at java.lang.Thread.run(Thread.java:748)
+
+"net.sf.ehcache.CacheManager@dfc5f46" daemon group="main" prio=5 tid=50 nid=50 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at java.util.TimerThread.mainLoop(Timer.java:552)
+    at java.util.TimerThread.run(Timer.java:505)
+
+"Agent Long-Polling Processor 4" daemon group="main" prio=5 tid=130 nid=130 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"http-nio-8111-exec-5" daemon group="main" prio=5 tid=22 nid=22 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:103)
+    at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+    at java.lang.Thread.run(Thread.java:748)
+
+"WebSocket Broadcaster 4" daemon group="main" prio=5 tid=141 nid=141 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Normal executor 2" group="main" prio=5 tid=101 nid=101 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"WebSocket Broadcaster 8" daemon group="main" prio=5 tid=146 nid=146 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Normal executor 11" group="main" prio=5 tid=122 nid=122 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"TC: 21:38:44 JSP '/buildLog/buildResultsDiv.jsp'; 21:38:44 GET '/buildLog/buildResultsDiv.jsp?jsp_precompile=true', from client 172.20.0.2:43511, user-agent "TeamCity Server 2018.2.2 (build 61245)", no auth; http-nio-8111-exec-7" daemon group="main" prio=5 tid=24 nid=24 blocked on java.lang.Object@76e14892
+   by "TC: 21:41:47 Processing REST request; 21:41:47 GET '/app/rest/server?fields=startTime%2CbuildNumber', from client 172.20.0.1:46868, authenticated as 'admin' (cathy) {id=1}; http-nio-8111-exec-4"
+   java.lang.Thread.State: BLOCKED
+    at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntries(AbstractSingleArchiveResourceSet.java:66)
+    at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:254)
+    at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:281)
+    at org.apache.catalina.webresources.Cache.getResource(Cache.java:62)
+    at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:216)
+    at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:225)
+    at org.apache.catalina.loader.WebappClassLoaderBase.getResourceAsStream(WebappClassLoaderBase.java:1120)
+    at org.apache.jasper.servlet.JasperLoader.getResourceAsStream(JasperLoader.java:140)
+    at org.apache.jasper.compiler.JDTCompiler$1.findType(JDTCompiler.java:225)
+    at org.apache.jasper.compiler.JDTCompiler$1.findType(JDTCompiler.java:193)
+    at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:151)
+    at org.eclipse.jdt.internal.compiler.lookup.UnresolvedReferenceBinding.resolve(UnresolvedReferenceBinding.java:101)
+    at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.resolveType(BinaryTypeBinding.java:212)
+    at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.superclass(BinaryTypeBinding.java:1875)
+    at org.eclipse.jdt.internal.compiler.lookup.ReferenceBinding.isSuperclassOf(ReferenceBinding.java:1528)
+    at org.eclipse.jdt.internal.compiler.lookup.ReferenceBinding.isCompatibleWith0(ReferenceBinding.java:1364)
+    at org.eclipse.jdt.internal.compiler.lookup.ReferenceBinding.isCompatibleWith(ReferenceBinding.java:1282)
+    at org.eclipse.jdt.internal.compiler.lookup.TypeBinding.isCompatibleWith(TypeBinding.java:611)
+    at org.eclipse.jdt.internal.compiler.lookup.Scope.compareTypes(Scope.java:111)
+    at org.eclipse.jdt.internal.compiler.flow.FlowContext.checkExceptionHandlers(FlowContext.java:394)
+    at org.eclipse.jdt.internal.compiler.ast.MessageSend.analyseCode(MessageSend.java:207)
+    at org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.analyseCode(MethodDeclaration.java:125)
+    at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.internalAnalyseCode(TypeDeclaration.java:739)
+    at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.analyseCode(TypeDeclaration.java:263)
+    at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.analyseCode(CompilationUnitDeclaration.java:118)
+    at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:873)
+    at org.eclipse.jdt.internal.compiler.Compiler.processCompiledUnits(Compiler.java:550)
+    at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:462)
+    at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:417)
+    at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:485)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:378)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+    at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:595)
+    at org.apache.jasper.servlet.JspServletWrapper.loadTagFile(JspServletWrapper.java:269)
+    at org.apache.jasper.compiler.TagFileProcessor.loadTagFile(TagFileProcessor.java:584)
+    at org.apache.jasper.compiler.TagFileProcessor.access$000(TagFileProcessor.java:48)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:667)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:671)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:671)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2447)
+    at org.apache.jasper.compiler.Node$Root.accept(Node.java:470)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.TagFileProcessor.loadTagFiles(TagFileProcessor.java:690)
+    at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:232)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:373)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+    at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:595)
+    at org.apache.jasper.servlet.JspServletWrapper.loadTagFile(JspServletWrapper.java:269)
+    at org.apache.jasper.compiler.TagFileProcessor.loadTagFile(TagFileProcessor.java:584)
+    at org.apache.jasper.compiler.TagFileProcessor.access$000(TagFileProcessor.java:48)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:667)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:671)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2567)
+    at org.apache.jasper.compiler.Node$NamedAttribute.accept(Node.java:1917)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:671)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:671)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2567)
+    at org.apache.jasper.compiler.Node$NamedAttribute.accept(Node.java:1917)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:671)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2447)
+    at org.apache.jasper.compiler.Node$Root.accept(Node.java:470)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.TagFileProcessor.loadTagFiles(TagFileProcessor.java:690)
+    at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:232)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:373)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+    at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:595)
+    at org.apache.jasper.servlet.JspServletWrapper.loadTagFile(JspServletWrapper.java:269)
+    at org.apache.jasper.compiler.TagFileProcessor.loadTagFile(TagFileProcessor.java:584)
+    at org.apache.jasper.compiler.TagFileProcessor.access$000(TagFileProcessor.java:48)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:667)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:671)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2572)
+    at org.apache.jasper.compiler.Node$JspBody.accept(Node.java:2018)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:671)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:671)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:671)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:671)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2447)
+    at org.apache.jasper.compiler.Node$Root.accept(Node.java:470)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.TagFileProcessor.loadTagFiles(TagFileProcessor.java:690)
+    at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:232)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:373)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+    at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:595)
+    at org.apache.jasper.servlet.JspServletWrapper.loadTagFile(JspServletWrapper.java:269)
+    at org.apache.jasper.compiler.TagFileProcessor.loadTagFile(TagFileProcessor.java:584)
+    at org.apache.jasper.compiler.TagFileProcessor.access$000(TagFileProcessor.java:48)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:667)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2447)
+    at org.apache.jasper.compiler.Node$Root.accept(Node.java:470)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.TagFileProcessor.loadTagFiles(TagFileProcessor.java:690)
+    at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:232)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:373)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+    at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:595)
+    at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+    at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+    at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+    at jetbrains.spring.web.TeamCityJSPServletImpl.access$001(TeamCityJSPServletImpl.java:15)
+    at jetbrains.spring.web.TeamCityJSPServletImpl$2.apply(TeamCityJSPServletImpl.java:1)
+    at jetbrains.buildServer.util.Util.doUnderContextClassLoader(Util.java:78)
+    at jetbrains.spring.web.TeamCityJSPServletImpl.lambda$service$0(TeamCityJSPServletImpl.java:10)
+    at jetbrains.spring.web.TeamCityJSPServletImpl$$Lambda$182/1143986526.apply(Unknown Source)
+    at jetbrains.buildServer.util.NamedThreadFactory.executeWithNewThreadNameFuncThrow(NamedThreadFactory.java:107)
+    at jetbrains.spring.web.TeamCityJSPServletImpl.service(TeamCityJSPServletImpl.java:6)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+    at jetbrains.spring.web.JspController.doHandle(JspController.java:5)
+    at jetbrains.buildServer.controllers.BaseController.handleRequestInternal(BaseController.java:114)
+    at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:174)
+    at jetbrains.buildServer.controllers.BaseController.handleRequest(BaseController.java:93)
+    at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:50)
+    at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+    at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+    at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+    at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+    at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+    at jetbrains.buildServer.maintenance.TeamCityDispatcherServlet.processedByMainServlet(TeamCityDispatcherServlet.java:11)
+    at jetbrains.buildServer.maintenance.TeamCityDispatcherServlet.service(TeamCityDispatcherServlet.java:37)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter.doFilter(JspPrecompilerFilter.java:19)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.DisableSessionIdFromUrlFilter.doFilter(DisableSessionIdFromUrlFilter.java:1)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.UserIdProviderFilter.doFilter(UserIdProviderFilter.java:2)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.NodeInfoHeaderFilter.doFilter(NodeInfoHeaderFilter.java:6)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:107)
+    at jetbrains.buildServer.diagnostic.web.DiagnosticFilter.doFilter(DiagnosticFilter.java:88)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at jetbrains.buildServer.web.DependencyParametersCalculationContextFilter.doFilter(DependencyParametersCalculationContextFilter.java:12)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at jetbrains.buildServer.web.ContentSecurityPolicyFilter.doFilter(ContentSecurityPolicyFilter.java:21)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at jetbrains.buildServer.web.CSRFFilter.doFilter(CSRFFilter.java:112)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:73)
+    at jetbrains.buildServer.web.DelegatingFilter.doFilter(DelegatingFilter.java:61)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.ResponseFragmentFilter.doFilter(ResponseFragmentFilter.java:12)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+    at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+    at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+    at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+    at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+    at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+    at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+    at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+    at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+    at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+    at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+    at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+    at java.lang.Thread.run(Thread.java:748)
+
+"TC: 21:38:46 JSP '/problems/buildProblemWithDetails.jsp'; 21:38:46 GET '/problems/buildProblemWithDetails.jsp?jsp_precompile=true', from client 172.20.0.2:49777, user-agent "TeamCity Server 2018.2.2 (build 61245)", no auth; http-nio-8111-exec-2" daemon group="main" prio=5 tid=19 nid=19 blocked on org.apache.jasper.compiler.JspRuntimeContext@41cdfe0e
+   by "TC: 21:38:44 JSP '/buildLog/buildResultsDiv.jsp'; 21:38:44 GET '/buildLog/buildResultsDiv.jsp?jsp_precompile=true', from client 172.20.0.2:43511, user-agent "TeamCity Server 2018.2.2 (build 61245)", no auth; http-nio-8111-exec-7"
+   java.lang.Thread.State: BLOCKED
+    at org.apache.jasper.compiler.TagFileProcessor.loadTagFile(TagFileProcessor.java:537)
+    at org.apache.jasper.compiler.TagFileProcessor.access$000(TagFileProcessor.java:48)
+    at org.apache.jasper.compiler.TagFileProcessor$TagFileLoaderVisitor.visit(TagFileProcessor.java:667)
+    at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441)
+    at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2447)
+    at org.apache.jasper.compiler.Node$Root.accept(Node.java:470)
+    at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389)
+    at org.apache.jasper.compiler.TagFileProcessor.loadTagFiles(TagFileProcessor.java:690)
+    at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:232)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:373)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+    at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+    at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:595)
+    at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+    at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+    at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+    at jetbrains.spring.web.TeamCityJSPServletImpl.access$001(TeamCityJSPServletImpl.java:15)
+    at jetbrains.spring.web.TeamCityJSPServletImpl$2.apply(TeamCityJSPServletImpl.java:1)
+    at jetbrains.buildServer.util.Util.doUnderContextClassLoader(Util.java:78)
+    at jetbrains.spring.web.TeamCityJSPServletImpl.lambda$service$0(TeamCityJSPServletImpl.java:10)
+    at jetbrains.spring.web.TeamCityJSPServletImpl$$Lambda$182/1143986526.apply(Unknown Source)
+    at jetbrains.buildServer.util.NamedThreadFactory.executeWithNewThreadNameFuncThrow(NamedThreadFactory.java:107)
+    at jetbrains.spring.web.TeamCityJSPServletImpl.service(TeamCityJSPServletImpl.java:6)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+    at jetbrains.spring.web.JspController.doHandle(JspController.java:5)
+    at jetbrains.buildServer.controllers.BaseController.handleRequestInternal(BaseController.java:114)
+    at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:174)
+    at jetbrains.buildServer.controllers.BaseController.handleRequest(BaseController.java:93)
+    at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:50)
+    at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+    at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+    at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+    at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+    at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+    at jetbrains.buildServer.maintenance.TeamCityDispatcherServlet.processedByMainServlet(TeamCityDispatcherServlet.java:11)
+    at jetbrains.buildServer.maintenance.TeamCityDispatcherServlet.service(TeamCityDispatcherServlet.java:37)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.jsp.JspPrecompilerFilter.doFilter(JspPrecompilerFilter.java:19)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.DisableSessionIdFromUrlFilter.doFilter(DisableSessionIdFromUrlFilter.java:1)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.UserIdProviderFilter.doFilter(UserIdProviderFilter.java:2)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.NodeInfoHeaderFilter.doFilter(NodeInfoHeaderFilter.java:6)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:107)
+    at jetbrains.buildServer.diagnostic.web.DiagnosticFilter.doFilter(DiagnosticFilter.java:88)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at jetbrains.buildServer.web.DependencyParametersCalculationContextFilter.doFilter(DependencyParametersCalculationContextFilter.java:12)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at jetbrains.buildServer.web.ContentSecurityPolicyFilter.doFilter(ContentSecurityPolicyFilter.java:21)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at jetbrains.buildServer.web.CSRFFilter.doFilter(CSRFFilter.java:112)
+    at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:112)
+    at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:73)
+    at jetbrains.buildServer.web.DelegatingFilter.doFilter(DelegatingFilter.java:61)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at jetbrains.buildServer.web.ResponseFragmentFilter.doFilter(ResponseFragmentFilter.java:12)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+    at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+    at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+    at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+    at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+    at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+    at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+    at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+    at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+    at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+    at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+    at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Agent messages processing thread 3" group="main" prio=5 tid=55 nid=55 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at java.lang.Object.wait(Native Method)
+    at jetbrains.buildServer.serverSide.impl.BuildAgentMessagesQueue$2.run(BuildAgentMessagesQueue.java:5)
+    at java.lang.Thread.run(Thread.java:748)
+
+"http-nio-8111-Acceptor-0" daemon group="main" prio=5 tid=30 nid=30 runnable 
+   java.lang.Thread.State: RUNNABLE
+    at sun.nio.ch.ServerSocketChannelImpl.accept0(Native Method)
+    at sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:422)
+    at sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:250)
+    at org.apache.tomcat.util.net.NioEndpoint$Acceptor.run(NioEndpoint.java:482)
+    at java.lang.Thread.run(Thread.java:748)
+
+"Reference Handler" daemon group="system" prio=10 tid=2 nid=2 waiting 
+   java.lang.Thread.State: WAITING
+    at java.lang.Object.wait(Native Method)
+    at java.lang.Object.wait(Object.java:502)
+    at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+    at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+"Alarm pool(shared)" daemon group="main" prio=3 tid=81 nid=81 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+"AsyncFileHandlerWriter-1259475182" daemon group="main" prio=5 tid=10 nid=10 waiting 
+   java.lang.Thread.State: TIMED_WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+    at java.util.concurrent.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:522)
+    at java.util.concurrent.LinkedBlockingDeque.poll(LinkedBlockingDeque.java:684)
+    at org.apache.juli.AsyncFileHandler$LoggerThread.run(AsyncFileHandler.java:160)
+
+"Normal executor 12" group="main" prio=5 tid=123 nid=123 waiting 
+   java.lang.Thread.State: WAITING
+    at sun.misc.Unsafe.park(Native Method)
+    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+    at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+    at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    at java.lang.Thread.run(Thread.java:748)
+
+
+Memory usage:
+   Code Cache: used = 64.9 MB committed = 65.56 MB max = 240 MB used/max = 27.05%
+   Metaspace: used = 171.62 MB committed = 191.96 MB max = -1 B 
+   Compressed Class Space: used = 19.2 MB committed = 21.46 MB max = 1 GB used/max = 1.88%
+   PS Eden Space: used = 40.55 MB committed = 147 MB max = 147.5 MB used/max = 27.49%
+   PS Survivor Space: used = 0 B committed = 11.5 MB max = 11.5 MB used/max = 0.00%
+   PS Old Gen: used = 176.81 MB committed = 248.5 MB max = 341.5 MB used/max = 51.78%
+   Total: used = 473.1 MB max = 1.72 GB used/max = 26.81%
+
+CPU statistics:
+   Available processors = 2
+   Load average (1m) = 2.89
+   Overall CPU usage = 26.99%
+   TeamCity process CPU usage = 1.88%
+
+Last full GC was finished 1s,908ms ago, took 2m:55s,140ms, freed 46.16 MB
+
+Dump taken in 109ms
