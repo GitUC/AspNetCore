@@ -1,15 +1,19 @@
-# Build Stage
-FROM microsoft/aspnetcore-build:2 AS build-env
-WORKDIR /api
+FROM microsoft/aspnetcore:2.0 AS base
+WORKDIR /app
+EXPOSE 80
 
-COPY api.csproj .
-RUN dotnet restore
-
+FROM microsoft/aspnetcore-build:2.0 AS build
+WORKDIR /src
+COPY ["api/api.csproj", "api/"]
+RUN dotnet restore "api/api.csproj"
 COPY . .
-RUN dotnet publish -o /publish
+WORKDIR "/src/api"
+RUN dotnet build "api.csproj" -c Release -o /app
 
-# Runtime Image Stage
-FROM microsoft/aspnetcore:2
-WORKDIR /publish
-COPY --from=build-env /publish .
+FROM build AS publish
+RUN dotnet publish "api.csproj" -c Release -o /app
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "api.dll"]
