@@ -5,16 +5,10 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_1" name="" type="dotnet.cli">
-        <parameters>
-          <param name="command" value="build" />
-          <param name="paths" value="generator.sln" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_2" name="Test" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="docker version" />
+          <param name="script.content"><![CDATA[docker version
+docker build -t ucdd/testapi .]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>

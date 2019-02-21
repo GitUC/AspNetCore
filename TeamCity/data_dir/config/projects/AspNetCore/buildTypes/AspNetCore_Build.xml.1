@@ -5,11 +5,11 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_1" name="" type="dotnet.cli">
+      <runner id="RUNNER_2" name="Test" type="simpleRunner">
         <parameters>
-          <param name="command" value="build" />
-          <param name="paths" value="generator.sln" />
+          <param name="script.content" value="docker version" />
           <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
